@@ -24,14 +24,22 @@ function addtocart() {
 
     let quantite_produit = parseInt(document.getElementById('quantity').value);
 
+    let name_produit = document.querySelector('#title').textContent;
+
+    let price_produit = document.querySelector('#price').value;
+
+    let image_produit = document.querySelector('.item__img>img').getAttribute('src');
+
     let OptionsProduit = {
         'id_produit': id_produit,
         'couleur': couleur_produit,
-        'quantite': quantite_produit
+        'quantite': quantite_produit,
+        'name' : name_produit,
+        'price' : price_produit,
+        'imageUrl' : image_produit
     }
 
     if (couleur_produit != '' && quantite_produit != '') {
-        console.log(ProduitEnregistreDansLeLocalStorage);
         if(ProduitEnregistreDansLeLocalStorage == null){
             ProduitEnregistreDansLeLocalStorage = [];
         }
